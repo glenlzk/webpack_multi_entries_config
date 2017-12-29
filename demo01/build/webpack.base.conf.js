@@ -17,6 +17,7 @@ module.exports = {
         login: './src/html/login.js',
         forget: './src/html/forget.js',
         findpassword: './src/html/findpassword.js',
+        common: ['./src/assets/js/util.js']
     },
     output: {
         path: config.build.assetsRoot,
@@ -38,36 +39,45 @@ module.exports = {
     },
     // require('!file-loader?name=static/js/[name].[ext]!./config/test');
     module: {
-        loaders: [{
-            test: /\.vue$/,
-            loader: 'vue'
-        }, {
-            test: /vue-preview.src.*?js$/,
-            loader: 'babel'
-        },{
-            test: /\.js$/,
-            loader: 'babel',
-            include: projectRoot,
-            exclude: /node_modules/
-        },
-        {
-            test: /\.json$/,
-            loader: 'json'
-        }, {
-            test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-            loader: 'url',
-            query: {
-                limit: 10000,
-                name: utils.assetsPath('img/[name].[ext]')
-            }
-        }, {
-            test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-            loader: 'url',
-            query: {
-                limit: 10000,
-                name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
-            }
-        },
+        loaders: [
+            {
+                test: /\.vue$/,
+                loader: 'vue'
+            },
+            {
+                test:/\.html$/,
+                loader:'html-loader?interpolate&minimize=false'
+            },
+            {
+                test: /vue-preview.src.*?js$/,
+                loader: 'babel'
+            },
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                include: projectRoot,
+                exclude: /node_modules/
+            },
+            {
+                test: /\.json$/,
+                loader: 'json'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 10000,
+                    name: utils.assetsPath('img/[name].[ext]')
+                }
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url',
+                query: {
+                    limit: 10000,
+                    name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+                }
+            },
         ]
     },
     vue: {

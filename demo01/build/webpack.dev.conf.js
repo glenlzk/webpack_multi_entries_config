@@ -38,12 +38,15 @@ var webpackConfig = merge(baseWebpackConfig, {
 // add hot-reload related code to entry chunks
 Object.keys(webpackConfig.entry).forEach(function(name) {
    // baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
-    webpackConfig.plugins.push(new HtmlWebpackPlugin({
-        filename: name + '.html',
-        template: path.resolve(__dirname, '../src/html/' + name + '.html'),
-        inject: true,
-        chunks: [name]
-    }));
+    if (name != 'common') {
+        webpackConfig.plugins.push(new HtmlWebpackPlugin({
+            filename: name + '.html',
+            template: path.resolve(__dirname, '../src/html/' + name + '.html'),
+            inject: true,
+            chunks: [name, 'common']
+        }));
+    };
+
 })
 
 
