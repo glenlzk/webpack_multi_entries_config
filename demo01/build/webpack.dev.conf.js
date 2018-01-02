@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var merge = require('webpack-merge')
 var utils = require('./utils')
 var path = require('path')
+var fs = require('fs');
 var baseWebpackConfig = require('./webpack.base.conf')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var OpenBrowserPlugin = require('open-browser-webpack-plugin')
@@ -36,6 +37,21 @@ var webpackConfig = merge(baseWebpackConfig, {
 
 
 // add hot-reload related code to entry chunks
+var files = fs.readdirSync('./src/html');
+files.forEach(function (item){
+    if (item.match('.html') != null) {
+        var name = item.split('.')[0];
+        webpackConfig.plugins.push(new HtmlWebpackPlugin({
+            filename: name + '.html',
+            template: path.resolve(__dirname, '../src/html/' + name + '.html'),
+            inject: true,
+            chunks: [name, 'common']
+        }));
+    };
+});
+
+/*
+
 Object.keys(webpackConfig.entry).forEach(function(name) {
    // baseWebpackConfig.entry[name] = ['./build/dev-client'].concat(baseWebpackConfig.entry[name])
     if (name != 'common') {
@@ -48,6 +64,7 @@ Object.keys(webpackConfig.entry).forEach(function(name) {
     };
 
 })
+*/
 
 
 module.exports = webpackConfig;
