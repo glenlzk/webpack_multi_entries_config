@@ -5,6 +5,7 @@
 
 
  import 'assets/css/iconfont.css'
+ import 'assets/css/login.css'
 // require('assets/css/iconfont.css');
 
 
