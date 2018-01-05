@@ -17,6 +17,7 @@ module.exports = {
         login: './src/html/login.js',
         forget: './src/html/forget.js',
         findpassword: './src/html/findpassword.js',
+        htmlWithimg: './src/html/htmlWithimg.js',
         common: ['./src/assets/js/util.js']
     },
     output: {
@@ -43,6 +44,10 @@ module.exports = {
             {
                 test: /\.vue$/,
                 loader: 'vue'
+            },
+            {
+                test: /\.html$/,
+                loader: 'html-withimg-loader'
             },
             {
                 test:/\.html$/,
