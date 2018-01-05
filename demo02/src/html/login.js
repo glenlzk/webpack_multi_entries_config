@@ -7,9 +7,11 @@
  import 'assets/css/iconfont.css'
  import 'assets/css/login.css'
 // require('assets/css/iconfont.css');
+import img from '../assets/images/peixun.jpg';
 
 
-console.log($('#app').html());
+
+$('#app').html(`<img src="${img}"/>`);
 
 
 
