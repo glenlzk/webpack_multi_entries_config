@@ -3,3 +3,6 @@
  */
 
 console.log('forget');
+
+import 'assets/css/forget'
+import 'bootstrap-sass';

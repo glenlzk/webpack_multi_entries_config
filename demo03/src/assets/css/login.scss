@@ -1,7 +1,10 @@
 
 @import './login.css';
 
-@import 'bootstrap-sass/bootstrap';
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_table-row";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_tables";
+
 
 .box {
   width: 300px;
