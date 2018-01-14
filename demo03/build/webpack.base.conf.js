@@ -18,6 +18,7 @@ module.exports = {
         login: './src/html/login.js',
         forget: './src/html/forget.js',
         findpassword: './src/html/findpassword.js',
+        css_loader: './src/html/css_loader.js',
         common: ['./src/assets/js/util.js']
     },
     output: {
