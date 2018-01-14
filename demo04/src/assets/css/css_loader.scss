@@ -1,0 +1,25 @@
+// --------------------- SCSS
+// @import url(test.scss);
+// @import url('test.scss');
+// @import url(./test.scss);
+
+// @import './test.scss';
+// @import 'test.scss';
+// @import test.scss;       // error
+
+// --------------------- CSS
+// @import url(test.css);
+// @import url('test.css');
+// @import url('./test.css');
+
+// @import './test.css';
+// @import 'test.css';
+//   @import test.css;       // error
+
+// ---------------------node_module > css
+// $icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+// @import "~bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+// @import url("~bootstrap-sass/assets/stylesheets/_bootstrap.scss");  // Error
+// @import url(~bootstrap-sass/assets/stylesheets/_bootstrap.scss);    // Error
+

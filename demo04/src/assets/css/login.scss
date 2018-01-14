@@ -1,0 +1,23 @@
+
+@import './login.css';
+
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/mixins/_table-row";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap/_tables";
+
+
+.box {
+  width: 300px;
+  height: 400px;
+  border:1px solid #000;
+  &-title {
+    height: 30px;
+    line-height: 30px;
+    background: #fcf;
+  }
+}
+
+.extend_box {
+  @extend .box;
+  font-size: 16px;
+}
